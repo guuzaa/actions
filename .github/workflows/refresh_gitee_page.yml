@@ -1,15 +1,16 @@
 name: "Refresh Gitee Page"
 on:
   schedule:
-  - cron: "0 0 * * *"
+  - cron: "0 1 * * *"
 
 jobs:
   reload-pages:
     runs-on: ubuntu-latest
     steps:
-      - name: reload
-        uses: mizuka-wu/gitee-pages-action@v1.0.0
-        with:
-          repository: guuzaa/guuzaa
-          cookie: ${{ secrets.GITEE_COOKIE }}
-          branch: master
+       - name: Build Gitee Pages
+         uses: yanglbme/gitee-pages-action@main
+         with:
+            gitee-username: guuzaa
+            gitee-password: ${{ secrets.GITEE_PASSWORD }}
+            gitee-repo: guuzaa
+            branch: master
