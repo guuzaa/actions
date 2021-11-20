@@ -12,5 +12,5 @@ jobs:
          with:
             gitee-username: guuzaa
             gitee-password: ${{ secrets.GITEE_PASSWORD }}
-            gitee-repo: guuzaa
+            gitee-repo: ${{ secrets.REPO }}
             branch: master
